@@ -5,6 +5,21 @@ var camper = "Mark A. Blaine";
 var daysOff = 7;
 var milesPerGallon = 15;
 var dailyBudget = 250;
+var transportation = "plane";
+var sleepingBaginSuitcase = true;
+	
+var howDoWeGetThere = function(vehicle){
+	if (vehicle === "car"){								//Conditional
+		console.log("We are driving to Tennessee");
+	} else {
+		console.log("We aren\'t driving to Bonnaroo");
+		if (sleepingBaginSuitcase){						//Nested Conditional
+			console.log("I\'m glad my sleeping bag fit in my suitcase.");
+		} else {
+			console.log("I need to buy a sleeping bag when I get there.");
+		};
+	};
+};	//end howDoWeGetThere
 
 //JSON
 var campsite = {
@@ -25,7 +40,6 @@ var stage = {
 	medium: "Which",
 	small: "This",
 	times: [90,60,30]	//Property Array
-	
 }
 
 var food = {
@@ -40,6 +54,10 @@ var food = {
 		return guzzle;
 	}
 };
-
+howDoWeGetThere(transportation);
 console.log(food.eat());
 console.log(food.hydrate());
+
+//for (var key in campsite) {
+//	console.log("Key: " + campsite[key])
+//}
