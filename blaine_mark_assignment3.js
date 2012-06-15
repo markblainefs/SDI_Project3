@@ -1,6 +1,6 @@
 //alert("JavaScript works!");
 
-//Local Variables
+//Global Variables
 var camper = "Mark A. Blaine";
 var daysOff = 7;
 var milesPerGallon = 15;
@@ -8,10 +8,10 @@ var dailyBudget = 250;
 
 //JSON
 var campsite = {
-	"type": "VIP",
-	"width": 10,
-	"depth": 20,
-	"showers": true
+	type: "VIP", 	//Property String
+	width: 10,		//Property Number
+	depth: 20,
+	showers: true	//Property Boolean
 };
 
 var bandsPlaying = [
@@ -20,8 +20,16 @@ var bandsPlaying = [
 		"Phish"
 	]; //Array
 
+var stage = {
+	big: "What",
+	medium: "Which",
+	small: "This",
+	times: [90,60,30]	//Property Array
+	
+}
+
 var food = {
-	"pizza": "New York",
+	"pizza": "New York", //Local Variables
 	"drink": "water",
 	eat: function(){
 		var meal = "Let\'s get some " + this.pizza + " pizza";
