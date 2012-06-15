@@ -7,6 +7,11 @@ var milesPerGallon = 15;
 var dailyBudget = 250;
 var transportation = "plane";
 var sleepingBaginSuitcase = true;
+var bandsPlaying = [
+		"Ludacris", 
+		"The Shins", 
+		"Phish"
+	]; //Array
 	
 var howDoWeGetThere = function(vehicle){
 	if (vehicle === "car"){								//Conditional
@@ -23,30 +28,27 @@ var howDoWeGetThere = function(vehicle){
 
 //JSON
 var campsite = {
-	type: "VIP", 	//Property String
-	width: 10,		//Property Number
+	type: "VIP", 	//Property: String
+	width: 10,		//Property: Number
 	depth: 20,
-	showers: true	//Property Boolean
+	showers: true	//Property: Boolean
 };
 
-var bandsPlaying = [
-		"Ludacris", 
-		"The Shins", 
-		"Phish"
-	]; //Array
-
 var stage = {
-	big: "What",
+	big: "What",	//Local Variables
 	medium: "Which",
 	small: "This",
-	times: [90,60,30]	//Property Array
+	times: [90,60,30]	//Property: Array
 }
 
 var food = {
-	"pizza": "New York", //Local Variables
-	"drink": "water",
+	pizza: {		//Property: Object
+		newYork: "pesto",
+		chicago: "deep dish"
+		}, 
+	drink: "water",
 	eat: function(){
-		var meal = "Let\'s get some " + this.pizza + " pizza";
+		var meal = "Let\'s get some " + this.pizza.newYork + " pizza";
 		return meal;
 	},
 	hydrate: function(){
