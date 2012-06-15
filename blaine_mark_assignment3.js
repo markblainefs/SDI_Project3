@@ -1,5 +1,11 @@
 //alert("JavaScript works!");
 
+//Local Variables
+var camper = "Mark A. Blaine";
+var daysOff = 7;
+var milesPerGallon = 15;
+var dailyBudget = 250;
+
 //JSON
 var campsite = {
 	"type": "VIP",
@@ -7,6 +13,12 @@ var campsite = {
 	"depth": 20,
 	"showers": true
 };
+
+var bandsPlaying = [
+		"Ludacris", 
+		"The Shins", 
+		"Phish"
+	]; //Array
 
 var food = {
 	"pizza": "New York",
