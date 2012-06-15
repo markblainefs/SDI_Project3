@@ -28,9 +28,17 @@ var howDoWeGetThere = function(vehicle){
 
 //JSON
 var campsite = {
-	type: "VIP", 	//Property: String
-	width: 10,		//Property: Number
-	depth: 20,
+	level: "VIP", 	//Property: String
+	location: "Shakedown",
+	type: {
+		ground: "grass",
+		details: {
+			width: 10,		//Property: Number
+			depth: 20,
+			electric: true,
+			parking: "Single car"
+		},
+	},
 	showers: true	//Property: Boolean
 };
 
