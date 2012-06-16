@@ -7,11 +7,12 @@ var milesPerGallon = 15;
 var dailyBudget = 250;
 var transportation = "plane";
 var sleepingBaginSuitcase = true;
-var bandsPlaying = [
-		"Ludacris", 
-		"The Shins", 
-		"Phish"
-	]; //Array
+var bandsPlaying = [	//Array
+		" Ludacris", 
+		" The Shins", 
+		" Phish"
+	];
+var startTime = 1800;
 	
 var howDoWeGetThere = function(vehicle){
 	if (vehicle === "car"){								//Conditional
@@ -29,14 +30,14 @@ var howDoWeGetThere = function(vehicle){
 //JSON
 var campsite = {
 	level: "VIP", 	//Property: String
-	location: "Shakedown",
+	location: "Shakedown Street",
 	type: {
 		ground: "grass",
 		details: {
 			width: 10,		//Property: Number
 			depth: 20,
 			electric: true,
-			parking: "Single car"
+			parking: "single car"
 		},
 	},
 	showers: true	//Property: Boolean
@@ -64,9 +65,22 @@ var food = {
 		return guzzle;
 	}
 };
-howDoWeGetThere(transportation);
+
+var whoAndWhen = function(showStartTime,bandsToSee){	//Method: Function
+	lengthOfShow = 120;
+	numberOfShows = bandsToSee.length;
+	for (var show=0; show < numberOfShows; show++){	//For loop
+		console.log("We'll watch" + bandsToSee[show] + " at " + showStartTime + " hours");
+		showStartTime = showStartTime+lengthOfShow;
+	};
+	return bandsToSee;	//Return Array
+}
+
+howDoWeGetThere(transportation);	//Method: Procedure, Argument: String
+//The following calls submit arguments and output returned values
 console.log(food.eat());
 console.log(food.hydrate());
+console.log(whoAndWhen(startTime,bandsPlaying) + " will be a great line-up"); // Argument: Number, Argument: Array
 
 //for (var key in campsite) {
 //	console.log("Key: " + campsite[key])
