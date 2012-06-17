@@ -70,8 +70,15 @@ var whoAndWhen = function(showStartTime,bandsToSee){	//Method: Function
 	lengthOfShow = 120;
 	numberOfShows = bandsToSee.length;
 	for (var show=0; show < numberOfShows; show++){	//For loop
-		console.log("We'll watch" + bandsToSee[show] + " at " + showStartTime + " hours");
+		console.log("It\'s time to watch" + bandsToSee[show] + " at " + showStartTime + " hours.");
 		showStartTime = showStartTime+lengthOfShow;
+		console.log("I need to drink three bottles of water during every show.");
+		var waterConsumed = 0,
+			waterNeeded = 3;
+		while (waterConsumed < waterNeeded) {	//While Loop, Nested Loop
+			console.log("I've had " + waterConsumed + " bottles of water, but I need to drink " + waterNeeded + " so I will drink one more.");
+			waterConsumed++;
+		};
 	};
 	return bandsToSee;	//Return Array
 }
@@ -80,7 +87,7 @@ howDoWeGetThere(transportation);	//Method: Procedure, Argument: String
 //The following calls submit arguments and output returned values
 console.log(food.eat());
 console.log(food.hydrate());
-console.log(whoAndWhen(startTime,bandsPlaying) + " will be a great line-up"); // Argument: Number, Argument: Array
+console.log(whoAndWhen(startTime,bandsPlaying) + " were a great line-up."); // Argument: Number, Argument: Array
 
 //for (var key in campsite) {
 //	console.log("Key: " + campsite[key])
