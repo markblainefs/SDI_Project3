@@ -18,18 +18,18 @@ var thingsToDo = {
 var startTime = 1800;
 var totalWater = 0;
 	
-var howDoWeGetThere = function(vehicle,bag){
+var howDoWeGetThere = function(vehicle,bag){			//Argument: String and Argument: Boolean
 	if (vehicle === "car"){								//Conditional
-		console.log("We are driving to Tennessee");
+		console.log("We are driving to Tennessee.");
 	} else {
-		console.log("We aren\'t driving to Bonnaroo");
+		console.log("We aren\'t driving to Bonnaroo.");
 		if (bag){						//Nested Conditional
 			console.log("I\'m glad my sleeping bag fit in my suitcase.");
 		} else {
 			console.log("I need to buy a sleeping bag when I get there.");
 		};
 	};
-};	//end howDoWeGetThere
+};	//end howDoWeGetThere (Back)
 
 //JSON
 var campsite = {
@@ -55,24 +55,33 @@ var stage = {
 }
 
 var food = {
+	hungry: false,  //Property: Boolean
+	notHungry: "I\'m not hungry.",
 	pizza: {		//Property: Object
 		newYork: "pesto",
 		chicago: "deep dish"
 		}, 
 	drink: "water",
 	eatPizza: function(pizza){
-		var meal = "Let\'s get some " + pizza + " pizza";
+		var meal = "Let\'s get some " + pizza + " pizza.";
 		return meal;  //Return String
 	},
-	drinkWater: function(moreWater){
+	drinkWater: function(moreWater){	//Method: Mutator
 		totalWater = moreWater + totalWater;
 		return totalWater;  //Return Number
+	},
+	assessHunger: function(){
+		if (this.hungry){
+			return ("I\'m still hungry.  Let\'s eat!");
+		} else {
+			return this.notHungry;  //Return Object
+		};
 	}
 };
 
-var whoAndWhen = function(showStartTime,bandsToSee){	//Method: Function
-	lengthOfShow = 120;
-	numberOfShows = bandsToSee.length;
+var whoAndWhen = function(showStartTime,bandsToSee){	//Method: Function, Argument: Number, Array and Object
+	lengthOfShow = 120;		//Local Variables
+	numberOfShows = bandsToSee.length;  //Property: Array
 	for (var show=0; show < numberOfShows; show++){	//For loop
 		console.log("It\'s time to watch" + bandsToSee[show] + " at " + showStartTime + " hours.");
 		showStartTime = showStartTime+lengthOfShow;
@@ -94,18 +103,15 @@ var travelHome = {
 	milesToGo: 280,
 	getGas: function() {
 		var fillUp = (this.milesToGo > (this.mileage * this.gallons));
-		return fillUp;
+		return fillUp;  //Return Boolean
 	}
 };
 
 howDoWeGetThere(transportation,sleepingBaginSuitcase);	//Method: Procedure, Argument: String, Argument: Boolean
-//The following calls submit arguments and output returned values
 
+//The following calls submit arguments and output returned values
 console.log(whoAndWhen(startTime,thingsToDo.bandsPlaying) + " were a great line-up."); // Argument: Number, Argument: Array
 console.log(food.eatPizza(food.pizza.newYork));  //Argument: Object
-console.log("I\'ll drink 2 more bottles of water for a total of " + food.drinkWater(2));
+console.log("I\'ll drink 2 more bottles of water for a total of " + food.drinkWater(2));	//Argument: Number
 console.log("Do we need to stop for gas? " + travelHome.getGas());
-
-//for (var key in campsite) {
-//	console.log("Key: " + campsite[key])
-//}
+console.log(food.assessHunger());
