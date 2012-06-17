@@ -15,12 +15,12 @@ var bandsPlaying = [	//Array
 var startTime = 1800;
 var totalWater = 0;
 	
-var howDoWeGetThere = function(vehicle){
+var howDoWeGetThere = function(vehicle,bag){
 	if (vehicle === "car"){								//Conditional
 		console.log("We are driving to Tennessee");
 	} else {
 		console.log("We aren\'t driving to Bonnaroo");
-		if (sleepingBaginSuitcase){						//Nested Conditional
+		if (bag){						//Nested Conditional
 			console.log("I\'m glad my sleeping bag fit in my suitcase.");
 		} else {
 			console.log("I need to buy a sleeping bag when I get there.");
@@ -79,18 +79,17 @@ var whoAndWhen = function(showStartTime,bandsToSee){	//Method: Function
 		while (waterConsumed < waterNeeded) {	//While Loop, Nested Loop
 			console.log("I've had " + waterConsumed + " bottles of water, but I need to drink " + waterNeeded + " so I will drink one more.");
 			waterConsumed++;
-			
 		};
 		totalWater = totalWater + waterConsumed;
 	};
 	return bandsToSee;	//Return Array
 }
 
-howDoWeGetThere(transportation);	//Method: Procedure, Argument: String
+howDoWeGetThere(transportation,sleepingBaginSuitcase);	//Method: Procedure, Argument: String, Argument: Boolean
 //The following calls submit arguments and output returned values
 
 console.log(whoAndWhen(startTime,bandsPlaying) + " were a great line-up."); // Argument: Number, Argument: Array
-console.log(food.eatPizza("New York Style"));
+console.log(food.eatPizza(food.pizza.newYork));  //Argument: Object
 console.log("I\'ll drink 2 more bottles of water for a total of " + food.drinkWater(2));
 
 //for (var key in campsite) {
