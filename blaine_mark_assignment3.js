@@ -2,16 +2,19 @@
 
 //Global Variables
 var camper = "Mark A. Blaine";
-var daysOff = 7;
-var milesPerGallon = 15;
-var dailyBudget = 250;
 var transportation = "plane";
 var sleepingBaginSuitcase = true;
-var bandsPlaying = [	//Array
+var thingsToDo = {
+		bandsPlaying: [	//Array
 		" Ludacris", 
 		" The Shins", 
 		" Phish"
-	];
+		],
+		shops: [
+		"Moon Mats",
+		"Bandana Fo Fana"
+		]
+	};
 var startTime = 1800;
 var totalWater = 0;
 	
@@ -83,14 +86,25 @@ var whoAndWhen = function(showStartTime,bandsToSee){	//Method: Function
 		totalWater = totalWater + waterConsumed;
 	};
 	return bandsToSee;	//Return Array
-}
+};
+
+var travelHome = {
+	mileage: 15,
+	gallons: 20,
+	milesToGo: 280,
+	getGas: function() {
+		var fillUp = (this.milesToGo > (this.mileage * this.gallons));
+		return fillUp;
+	}
+};
 
 howDoWeGetThere(transportation,sleepingBaginSuitcase);	//Method: Procedure, Argument: String, Argument: Boolean
 //The following calls submit arguments and output returned values
 
-console.log(whoAndWhen(startTime,bandsPlaying) + " were a great line-up."); // Argument: Number, Argument: Array
+console.log(whoAndWhen(startTime,thingsToDo.bandsPlaying) + " were a great line-up."); // Argument: Number, Argument: Array
 console.log(food.eatPizza(food.pizza.newYork));  //Argument: Object
 console.log("I\'ll drink 2 more bottles of water for a total of " + food.drinkWater(2));
+console.log("Do we need to stop for gas? " + travelHome.getGas());
 
 //for (var key in campsite) {
 //	console.log("Key: " + campsite[key])
