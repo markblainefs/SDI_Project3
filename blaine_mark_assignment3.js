@@ -13,6 +13,7 @@ var bandsPlaying = [	//Array
 		" Phish"
 	];
 var startTime = 1800;
+var totalWater = 0;
 	
 var howDoWeGetThere = function(vehicle){
 	if (vehicle === "car"){								//Conditional
@@ -56,13 +57,13 @@ var food = {
 		chicago: "deep dish"
 		}, 
 	drink: "water",
-	eat: function(){
-		var meal = "Let\'s get some " + this.pizza.newYork + " pizza";
-		return meal;
+	eatPizza: function(pizza){
+		var meal = "Let\'s get some " + pizza + " pizza";
+		return meal;  //Return String
 	},
-	hydrate: function(){
-		var guzzle = "Let's drink some " + this.drink;
-		return guzzle;
+	drinkWater: function(moreWater){
+		totalWater = moreWater + totalWater;
+		return totalWater;  //Return Number
 	}
 };
 
@@ -78,16 +79,19 @@ var whoAndWhen = function(showStartTime,bandsToSee){	//Method: Function
 		while (waterConsumed < waterNeeded) {	//While Loop, Nested Loop
 			console.log("I've had " + waterConsumed + " bottles of water, but I need to drink " + waterNeeded + " so I will drink one more.");
 			waterConsumed++;
+			
 		};
+		totalWater = totalWater + waterConsumed;
 	};
 	return bandsToSee;	//Return Array
 }
 
 howDoWeGetThere(transportation);	//Method: Procedure, Argument: String
 //The following calls submit arguments and output returned values
-console.log(food.eat());
-console.log(food.hydrate());
+
 console.log(whoAndWhen(startTime,bandsPlaying) + " were a great line-up."); // Argument: Number, Argument: Array
+console.log(food.eatPizza("New York Style"));
+console.log("I\'ll drink 2 more bottles of water for a total of " + food.drinkWater(2));
 
 //for (var key in campsite) {
 //	console.log("Key: " + campsite[key])
